@@ -58,22 +58,6 @@ section{
     padding: 125px 100px;
 }
 
-@media (max-width: 1000px){
-
-    section{
-        padding: 100px 50px;
-    }
-
-}
-
-@media (max-width: 600px){
-
-    section{
-        padding: 80px 30px;
-    }
-
-}
-
 section p{
     max-width: 800px;
     text-align: center;
@@ -114,22 +98,6 @@ header a{
     text-transform: uppercase;
     letter-spacing: 5px;
 }
-@media (max-width: 1000px){
-    header{
-        padding: 20px 50px;
-    }
-}
-
-
-@media (max-width: 700px){
-    header{
-        flex-direction: column;
-    }
-
-    header h2{
-        margin-bottom: 15px;
-    }
-}
 
 .introduction p{
     font-size: 25px;
@@ -156,22 +124,6 @@ header a{
     height: 126px;
     background: url("../image/line3.png")100%;
 }
-
-/*
-@media (max-width: 700px){
-    .border{
-        height: 90px;
-    }
-
-    .border-two{
-        height: 90px;
-    }
-
-    .border-three{
-        height: 90px;
-    }
-}
-*/
 
 /*--------------------
  	technologies
@@ -312,17 +264,6 @@ header a{
     border-bottom: none!important;
     cursor: pointer;
 }
-@media (max-width: 800px){
-
-    .contact form input{
-        flex-basis: 100%;
-        margin: 0 0 20px 0;
-    }
-
-}
-
-
-
 
 /*-------------
  	Footer
@@ -353,16 +294,105 @@ footer p{
     font-size: 8px;
 }
 
-@media (max-width: 700px){
+/* -- RESPONSIVE -- */
 
-    footer{
-        padding: 80px 15px;
+@media (max-width: 600px){
+
+    .hidden {
+        display: none!important;
+    }
+
+    .contacts-numbers {
+        padding: 0;
+        font-size: 20px;
+    }
+
+    .technologies-img img{
+        display: block;
+        max-width: 100%;
+        height: auto;
     }
 
 }
 
+@media (max-width: 700px){
 
-/* -- Demo ads -- */
+    section{
+        padding: 30px 40px!important;
+    }
+
+    header{
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    header h2{
+        margin-bottom: 15px;
+    }
+
+    footer{
+        padding: 80px 80px;
+    }
+
+    .principles-block {
+        display: block;
+    }
+
+    .trafaret {
+        right: 10%;
+        height: 30px;
+    }
+    .sublimation {
+        left: 10%;
+        height: 25px;
+    }
+    .gravirovanie {
+        right: 10%;
+        height: 30px;
+    }
+    .tisnenie{
+        left: 10%;
+        height: 25px;
+    }
+    .termopress{
+        right: 10%;
+        height: 25px;
+    }
+    .tempoduk{
+        left: 10%;
+        height: 20px;
+    }
+    .rizka{
+        left: 10%;
+        height: 30px;
+    }
+}
+
+
+@media (max-width: 800px){
+
+    .contact form input{
+        flex-basis: 100%;
+        margin: 0 0 20px 0;
+    }
+
+}
+
+@media (max-width: 1000px){
+    section{
+        padding: 100px 50px;
+    }
+
+    header{
+        padding: 20px 50px;
+    }
+
+    .principles-item {
+        padding: 0 10px;
+        width: auto;
+    }
+
+}
 
 @media (max-width: 1200px) {
     #bsaHolder{ display:none;}
