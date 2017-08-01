@@ -1,0 +1,369 @@
+/*-------------
+ 	General
+-------------*/
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Bliss';
+    src: url(../fonts/blisspro-regular.otf); }
+
+@font-face {
+    font-family: 'Bliss-light';
+    src: url(../fonts/blisspro-light.otf); }
+
+@font-face {
+    font-family: 'Bliss-extralight';
+    src: url(../fonts/blisspro-extralight.otf); }
+
+@font-face {
+    font-family: 'Alssch-light';
+    src: url(../fonts/ALSSchlangesans-Light.otf); }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Bliss-extralight';
+    color: #282a2c;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+
+    opacity: 0.9;
+}
+
+a:hover{
+    opacity: 1;
+}
+
+a.btn{
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background-color: #2196F3;
+    font-weight: 800;
+    text-align: center;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 125px 100px;
+}
+
+@media (max-width: 1000px){
+
+    section{
+        padding: 100px 50px;
+    }
+
+}
+
+@media (max-width: 600px){
+
+    section{
+        padding: 80px 30px;
+    }
+
+}
+
+section p{
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.5;
+    color: #282a2c;
+}
+
+
+/*-------------
+ 	Header
+-------------*/
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
+header a{
+    font-size: 20px;
+}
+
+.logo {
+    margin-top: 0;
+    height: 168px;
+    width: 354px;
+    background-color: #fef102;
+    text-align: center;
+}
+
+.logo img {
+    margin: 30px 42px 10px;
+}
+.logo span {
+    font: 14px 'Alssch-light';
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+@media (max-width: 1000px){
+    header{
+        padding: 20px 50px;
+    }
+}
+
+
+@media (max-width: 700px){
+    header{
+        flex-direction: column;
+    }
+
+    header h2{
+        margin-bottom: 15px;
+    }
+}
+
+.introduction p{
+    font-size: 25px;
+}
+
+/*----------------
+ 	border
+----------------*/
+
+.border {
+    width: 100%;
+    height: 126px;
+    background: url("../image/line1.png")100%;
+}
+
+.border-two {
+    width: 100%;
+    height: 126px;
+    background: url("../image/line2.png")100%;
+}
+
+.border-three {
+    width: 100%;
+    height: 126px;
+    background: url("../image/line3.png")100%;
+}
+
+/*
+@media (max-width: 700px){
+    .border{
+        height: 90px;
+    }
+
+    .border-two{
+        height: 90px;
+    }
+
+    .border-three{
+        height: 90px;
+    }
+}
+*/
+
+/*--------------------
+ 	technologies
+---------------------*/
+
+.technologies {
+    position: relative;
+}
+
+.trafaret {
+    right: 30%;
+    position: absolute;
+    top: 20%;
+}
+.sublimation {
+    left: 33%;
+    top: 30%;
+    position: absolute;
+}
+.gravirovanie {
+    right: 40%;
+    position: absolute;
+    top: 40%;
+}
+.tisnenie{
+    left: 30%;
+    top: 50%;
+    position: absolute;
+}
+.termopress{
+    right: 33%;
+    position: absolute;
+    bottom: 40%;
+}
+.tempoduk{
+    left: 40%;
+    bottom: 34%;
+    position: absolute;
+}
+.rizka{
+    left: 28%;
+    bottom: 20%;
+    position: absolute;
+}
+
+/* animation */
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animated.hinge {
+    animation-duration: 2s;
+}
+
+.animated.flipOutX,
+.animated.flipOutY,
+.animated.bounceIn,
+.animated.bounceOut {
+    animation-duration: .75s;
+}
+
+@keyframes bounce {
+    from, 20%, 53%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translate3d(0,0,0);
+    }
+
+    40%, 43% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -30px, 0);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -15px, 0);
+    }
+
+    90% {
+        transform: translate3d(0,-4px,0);
+    }
+}
+
+.bounce {
+    animation-name: bounce;
+    transform-origin: center bottom;
+}
+/* end of animation */
+
+/*----------------------
+ 	Principles Section
+----------------------*/
+.principles-block{
+    display: flex;
+}
+.principles-item {
+    text-align: center;
+    height: 250px;
+    width: 320px;
+}
+.principles-item img{
+    width: 85px;
+}
+.principles-item p{
+    font-size: 25px;
+}
+
+/*---------------------
+ 	Contact Section
+---------------------*/
+.contacts span{
+    font: 25px 'Bliss';
+}
+
+.contacts-numbers{
+    padding: 95px 0 30px 0;
+    font: 25px 'Bliss-extralight';
+}
+
+#form input {
+    border: none;
+    border-bottom: 1px solid #c0c0c0;
+    text-align: center;
+    width: 355px;
+    padding: 22px 0 5px 0;
+    font-size: 25px;
+}
+#form input::-webkit-input-placeholder {
+    font: 25px 'Bliss-extralight';
+    color: #282a2c;
+}
+.message {
+    padding: 55px 0!important;
+}
+.button {
+    padding-top: 5px!important;
+    background-color: transparent;
+    border-bottom: none!important;
+    cursor: pointer;
+}
+@media (max-width: 800px){
+
+    .contact form input{
+        flex-basis: 100%;
+        margin: 0 0 20px 0;
+    }
+
+}
+
+
+
+
+/*-------------
+ 	Footer
+-------------*/
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fef102;
+    height: 155px;
+    padding: 0 100px;
+}
+
+footer p{
+    text-transform: uppercase;
+    color: #282a2c;
+}
+
+.logo-footer {
+    text-align: center;
+}
+.logo-footer img{
+    width: 115px;
+}
+
+.logo-footer p{
+    font-size: 8px;
+}
+
+@media (max-width: 700px){
+
+    footer{
+        padding: 80px 15px;
+    }
+
+}
+
+
+/* -- Demo ads -- */
+
+@media (max-width: 1200px) {
+    #bsaHolder{ display:none;}
+}

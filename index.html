@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lank="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VOYT</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <body>
+        <header>
+                <a href="https://www.facebook.com/voytprint/">спільнота |</a>
+                <div class="logo">
+                    <img src="image/logo.png">
+                    <span>друкарська&#160;&#160;&#160;майстерня</span>
+                </div>
+                <a href="https://www.facebook.com/voytprint/">контакти |</a>
+        </header>
+
+        <section class="introduction">
+            <p>Ми – київська друкарська майстерня VOYT.<br>
+                Реалізовуємо замовлення швидко, тож ваші проекти<br>
+                не матимуть часу на відпочинок.</p>
+        </section>
+
+        <div class="border">
+        </div>
+
+        <section class="technologies">
+            <div class="technologies-img"><img src="image/technologies.png"></div>
+            <img class="animated bounce trafaret" src="image/trafaret.png">
+            <img class="animated bounce sublimation" src="image/sublimation.png">
+            <img class="animated bounce gravirovanie" src="image/gravirovanie.png">
+            <img class="animated bounce tisnenie" src="image/tisnenie.png">
+            <img class="animated bounce termopress" src="image/termopress.png">
+            <img class="animated bounce tempoduk" src="image/tempoduk.png">
+            <img class="animated bounce rizka" src="image/rizka.png">
+        </section>
+
+        <div class="border-two">
+        </div>
+
+        <section class="principles">
+            <div class="principles-block">
+                <div class="principles-item">
+                    <img src="image/star.png">
+                    <p>Індивідуальний підхід<br> до кожного клієнта</p>
+                </div>
+                <div class="principles-item">
+                    <img src="image/layers.png">
+                    <p>Друкуємо тиражі<br> різних об'ємів</p>
+                </div>
+                <div class="principles-item">
+                    <img src="image/calendar.png">
+                    <p>Виконуємо замовлення<br> швидко</p>
+                </div>
+            </div>
+            <div class="principles-block">
+                <div class="principles-item">
+                    <img src="image/like.png">
+                    <p>Працюємо за<br> прийнятними цінами</p>
+                </div>
+                <div class="principles-item">
+                    <img src="image/signs.png">
+                    <p>Приймаємо макети<br> у векторі та растрі<br> (PSD, TIF, PDF, AI)</p>
+                </div>
+                <div class="principles-item">
+                    <img src="image/cogwheel.png">
+                    <p>Працюємо за схемою<br> передоплати</p>
+                </div>
+            </div>
+        </section>
+        <div class="border-three">
+        </div>
+
+        <section class="contacts">
+            <span>КОНТАКТИ</span>
+                <p class="contacts-numbers">
+                    +38 063 804 23 10<br>
+                    +38 095 599 68 82<br><br>
+                    E-mail: voyt.print@gmail.com
+                </p>
+            <form id="form">
+               <p><input type="text" name="name" placeholder="Ім’я" required="required"/></p>
+                <p><input type="text" name="e-mail" placeholder="E-mail" required="required"/></p>
+                <p> <input class="message" type="text" name="text" placeholder="Повідомлення" required="required"/></p>
+                <p> <input class="button" type="submit" value="Відправити >"/></p>
+            </form>
+        </section>
+
+        <footer>
+                <div class="logo-footer">
+                    <img src="image/logo.png">
+                    <p>© 2017 Друкарська майстерня VOYT</p>
+                </div>
+
+                <div class="fb-footer">
+                    <a aria-hidden="true" href="https://www.facebook.com/voytprint/">
+                        <img src="image/fb.png">
+                    </a>
+                </div>
+
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#form").submit(function() { //устанавливаем событие отправки для формы с id=form
+                    var form_data = $(this).serialize(); //собераем все данные из формы
+                    $.ajax({
+                        type: "POST", //Метод отправки
+                        url: "init.php", //путь до php фаила отправителя
+                        data: form_data,
+                        success: function() {
+                            //код в этом блоке выполняется при успешной отправке сообщения
+                            alert("Ваше повідомлення відправлено!");
+                        });
+                });
+            });
+        </script>
+    </body>
+</html>
