@@ -3,7 +3,7 @@
  */
 $(document).ready(function(){
 
-    $("#form").on('submit', function(){
+    $("#form11").on('submit', function(){
         var th = $(this);
         $.ajax({
             type: "POST",
