@@ -11,7 +11,8 @@ $translate_arr = array(
     "theme" => "Персонал",
     "email" => "E-mail",
 );
-
+var_dump($_POST);
+exit;
 foreach ( $_POST as $key => $value ) {
     if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
         if(empty($key)) $key = "Запись на консультацию";
