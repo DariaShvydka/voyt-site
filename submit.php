@@ -1,25 +1,36 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Daria
- * Date: 29.07.17
- * Time: 16:28
- */
-if((isset($_POST['name'])&&$_POST['name']!="")&&(isset($_POST['phone'])&&$_POST['phone']!="")){ //Проверка отправилось ли наше поля name и не пустые ли они
-    $to = 'dariashvydka@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
-    $subject = 'Відправити повідомлення'; //Заголовок сообщения
-    $message = '
-                <html>
-                    <head>
-                        <title>'.$subject.'</title>
-                    </head>
-                    <body>
-                        <p>Імя: '.$_POST['name'].'</p>
-                        <p>Почта: '.$_POST['phone'].'</p>                        
-                    </body>
-                </html>'; //Текст нащего сообщения можно использовать HTML теги
-    $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
-    $headers .= "From: Отправитель <from@example.com>\r\n"; //Наименование и почта отправителя
-    mail($to, $subject, $message, $headers); //Отправка письма с помощью функции mail
+$project_name = "VOYT - Заявка с сайта";
+$admin_email = "dariashvydka@gmail.com"; //поменять на рабочий
+$form_subject = "VOYT - Заявка с сайта";
+
+$c = true;
+
+$translate_arr = array(
+    "name"  => "Имя",
+    "tel"   => "Телефон",
+    "theme" => "Персонал",
+    "email" => "E-mail",
+);
+
+foreach ( $_POST as $key => $value ) {
+    if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
+        if(empty($key)) $key = "Запись на консультацию";
+        $message .= "
+			" . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+			<td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$translate_arr[$key]</b></td>
+			<td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+		</tr>
+		";
+    }
 }
-?>
+
+$message = "<table style='width: 100%;'>$message</table>";
+function adopt($text) {
+    return '=?UTF-8?B?'.Base64_encode($text).'?=';
+}
+$headers = "MIME-Version: 1.0" . PHP_EOL .
+    "Content-Type: text/html; charset=utf-8" . PHP_EOL .
+    'From: '.adopt($project_name).' <'.$admin_email.'>' . PHP_EOL .
+    'Reply-To: '.$admin_email.'' . PHP_EOL;
+mail($admin_email, adopt($form_subject), $message, $headers );
+exit();
