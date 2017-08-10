@@ -1,27 +1,17 @@
-/**
- * Created by Daria on 07.08.17.
- */
-$(document).ready(function(){
-
-    $("#form11").on('submit', function(){
-        var th = $(this);
-        $.ajax({
-            type: "POST",
-            url: "submit.php",
-            data: th.serialize(),
-            beforeSend: function(html){
-                $(modal) // берем строку с селектором и делаем из нее jquery объект
-                    .css('display', 'none')
-                    .animate({opacity: 0, top: '50%'}, 200); // плавно показываем
-            },
-            success: function(html){
-                open_modal_tnx();
-                setTimeout(function() {
-                    th.trigger("reset");
-                    close.click();
-                }, 7000);
+$("#form").submit(function() {
+    $.ajax({
+        type: "POST",
+        url: "mail/mail.php",
+        data: $("#form").serialize()
+    }).done(function() {
+        $.jGrowl("Найближчим часом ми зв'яжемося з вами!", {
+            life: 10000,
+            header: 'Ваша заявка відправлена!',
+            theme: 'jgcolor',
+            beforeOpen: function(e,m,o){
+                $(e).width( "250px" ).height("110px");
             }
         });
-        return false;
     });
+    return false;
 });
